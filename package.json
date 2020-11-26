@@ -1,8 +1,8 @@
 {
   "name": "bulletinboardtodo",
   "version": "1.0.0",
-  "description": "pplication",
-  "main": "app.js",
+  "description": "application",
+  "main": "server.js",
   "author": "Joshua Rhoads",
   "license": "MIT",
   "dependencies": {
