@@ -13,7 +13,7 @@ app.set('view engine', 'html');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(methodOverride());
+app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/'));
 app.use('/build', express.static('public'));
 
