@@ -10,7 +10,8 @@ var express        = require('express'),
 
 
   var app = module.exports = express();
-  app.engine('html', require('ejs').renderFile);
+  var req = require('request');
+  app.engine('html', (req).renderFile);
   app.set('view engine', 'html');
   app.use(methodOverride('X-HTTP-Method-Override'))
   app.use(methodOverride("X-HTTP-Method"));          
