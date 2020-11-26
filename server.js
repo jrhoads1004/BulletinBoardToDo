@@ -10,8 +10,7 @@ var express        = require('express'),
 
 
   var app = module.exports = express();
-  var req = require('request');
-  app.engine('html', (req).renderFile);
+  app.engine('html', require('request').renderFile);
   app.set('view engine', 'html');
   app.use(methodOverride('X-HTTP-Method-Override'))
   app.use(methodOverride("X-HTTP-Method"));          
@@ -21,7 +20,6 @@ var express        = require('express'),
   app.use(morgan('dev'));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
-  app.use(methodOverride('_method'));
   app.use(express.static(__dirname + '/'));
   app.use('/build', express.static('public'));
   
