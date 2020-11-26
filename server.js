@@ -8,7 +8,7 @@ var express        = require('express'),
     api            = require('./backend/api');
 
 
-static configuation () : any {
+
   var app = module.exports = express();
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'html');
@@ -45,4 +45,3 @@ app.listen(8080);
 console.log('Magic happens on port 8080...');
 return app;
 
-}
