@@ -1,3 +1,4 @@
+const { static } = require('express');
 var express        = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
@@ -6,18 +7,23 @@ var express        = require('express'),
     routes         = require('./backend'),
     api            = require('./backend/api');
 
-var app = module.exports = express();
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.use(methodOverride('X-HTTP-Method-Override'))
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride('_method'));
-app.use(express.static(__dirname + '/'));
-app.use('/build', express.static('public'));
-
+static configuation () : any {
+  var app = module.exports = express();
+  app.engine('html', require('ejs').renderFile);
+  app.set('view engine', 'html');
+  app.use(methodOverride('X-HTTP-Method-Override'))
+  app.use(methodOverride("X-HTTP-Method"));          
+  app.use(methodOverride("X-HTTP-Method-Override")); 
+  app.use(methodOverride("X-Method-Override"));      
+  app.use(methodOverride("_method"));
+  app.use(morgan('dev'));
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+  app.use(methodOverride('_method'));
+  app.use(express.static(__dirname + '/'));
+  app.use('/build', express.static('public'));
+  
 var env = process.env.NODE_ENV;
 if ('development' == env) {
   app.use(errorHandler({
@@ -37,3 +43,6 @@ app.delete('/api/events/:eventId', api.event);
 
 app.listen(8080);
 console.log('Magic happens on port 8080...');
+return app;
+
+}
