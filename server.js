@@ -10,6 +10,7 @@ var app = module.exports = express();
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
