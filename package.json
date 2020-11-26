@@ -1,9 +1,9 @@
 {
-  "name": "bulletinboardtodo",
+  "name": "vue-event-bulletin",
   "version": "1.0.0",
-  "description": "application",
+  "description": "Demo application for the scotch.io tutorial",
   "main": "server.js",
-  "author": "Joshua Rhoads",
+  "author": "Ryan Chenkie, Jason Lam",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "body-parser": "^1.14.1",
     "errorhandler": "^1.4.2",
-    "method-override": "^2.3.10",
+    "method-override": "^2.3.5",
     "morgan": "^1.6.1"
   },
   "scripts": {

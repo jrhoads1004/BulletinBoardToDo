@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8">
   <title>Bulletin Board</title>
@@ -15,11 +14,6 @@
   }
   </style>
 </head>
-<form method="POST" action="/resource" enctype="application/x-www-form-urlencoded">
-    <input type="hidden" name="_method" value="DELETE">
-    <button type="submit">Delete resource</button>
-</form>
-  
 <body>
 
   <div class="jumbotron">
@@ -55,11 +49,7 @@
   </div>
 
 </body>
-<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+<script src="node_modules/vue/dist/vue.min.js"></script>
 <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
 <script src="app.js"></script>
-<script src="server.js"></script>
-<script src="node_modules/bootstrap/dist/js/npm.js"></script>
-<script src="internal/modules/cjs/loader.js"></script>
-<script src="internal/modules/cjs/helpers.js"></script>
 </html>
